@@ -21,5 +21,5 @@ phase,week,day,description,start_time,end_time
 1+2,3,3,assessment results discussion,5pm,6pm
 3,3,5,p3 graduation!,9am,6pm
 3,3,5,p3 inter-cohort demo practice,10am,12:30pm
-1+2+3,3,5,graduation lunch,12:30pm,2pm
-1+2+3,3,5,graduation party,6pm,8pm
+,3,5,graduation lunch,12:30pm,2pm
+,3,5,graduation party,6pm,8pm
