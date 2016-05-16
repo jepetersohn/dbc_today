@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+# ^ The above comment tells the system
+# to read this file like a ruby file
+require 'pry'
+require_relative 'controller'
+
+phase = ARGV[0]
+week = ARGV[1]
+day = ARGV[2] || Date.today.wday.to_s
+
+controller = Controller.new
+
+controller.show_schedule(phase, week, day)
