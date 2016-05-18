@@ -2,6 +2,7 @@ module Timeable
   private
 
   def in_military(time_string)
+    time_string = time_string.dup
     time_string = time_string.insert(-3, ':00') unless time_string.include?(':')
     meridian = time_string.slice!(/(a|p)m/)
     if meridian == 'am' || time_string.include?('12:')
