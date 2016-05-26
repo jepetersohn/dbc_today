@@ -28,7 +28,7 @@ class View
     string = value
              .to_s
              .tr('_', ' ')
-             .ljust(width)
+             .ljust(width - 1) + ' '
 
     if string.length > width
       string[0..width - 5] + '... '
