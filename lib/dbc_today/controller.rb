@@ -12,6 +12,5 @@ class Controller
   def show_schedule(phase, week, day)
     events = Event.where(phase: phase, week: week, day: day)
     view.show_events(events)
-    # binding.pry
   end
 end
