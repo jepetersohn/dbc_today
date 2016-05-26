@@ -6,9 +6,9 @@ class Event
   attr_reader :phase, :week, :day, :description, :start_time, :end_time
 
   def initialize(attributes)
-    @phase = attributes.fetch(:phase, nil)
-    @week = attributes.fetch(:week, nil)
-    @day = attributes.fetch(:day, nil)
+    @phase = attributes.fetch(:phase)
+    @week = attributes.fetch(:week)
+    @day = attributes.fetch(:day)
     @description = attributes.fetch(:description, nil)
     @start_time = attributes.fetch(:start_time, nil)
     @end_time = attributes.fetch(:end_time, nil)
