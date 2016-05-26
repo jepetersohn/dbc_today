@@ -16,8 +16,8 @@ class Event
 
   def all_day?
     start_time.downcase == 'all day' ||
-      starts_at_day_start? &&
-      ends_at_day_end?
+      (starts_at_day_start? &&
+      ends_at_day_end?)
   end
 
   def start_time_military
