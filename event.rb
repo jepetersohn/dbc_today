@@ -14,6 +14,12 @@ class Event
     @end_time = attributes.fetch(:end_time, nil)
   end
 
+  def all_day?
+    start_time.downcase == 'all day' ||
+      starts_at_day_start? &&
+      ends_at_day_end?
+  end
+
   def start_time_military
     in_military(start_time)
   end
@@ -42,6 +48,16 @@ class Event
   end
 
   private
+
+  def starts_at_day_start?
+    start_time.start_with?('9:00a') ||
+      start_time.start_with?('9a')
+  end
+
+  def ends_at_day_end?
+    end_time.start_with?('6:00p') ||
+      end_time.start_with?('6p')
+  end
 
   def self.nil_or_match(attribute_value, value_to_match)
     attribute_value.nil? ||

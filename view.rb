@@ -1,29 +1,44 @@
+require 'colorize'
+
 class View
-  def show_headers
-    headers = 'phase'.ljust(6)
-    headers += 'week'.ljust(6)
-    headers += 'day'.ljust(6)
-    headers += 'description'.ljust(20)
-    headers += 'start_time'.ljust(12)
-    headers += 'end_time'.ljust(12)
-    puts headers
+  def columns
+    {
+      phase: 6,
+      week: 6,
+      day: 6,
+      description: 20,
+      start_time: 12,
+      end_time: 12
+    }
+  end
+
+  def header_row
+    headers =
+      columns
+      .map { |k, v| k.to_s.ljust(v) }
+
+    headers.join
   end
   
-  def show_event(event)
-    row = event.phase.to_s.ljust(6)
-    row += event.week.to_s.ljust(6)
-    row += event.day.to_s.ljust(6)
-    row += event.description.to_s.ljust(20)
-    row += event.start_time.to_s.ljust(12)
-    row += event.end_time.to_s.ljust(12)
-    puts row
+  def event_row(event)
+    cells =
+      columns
+      .map { |k, v| event.send(k).to_s.ljust(v) }
+
+    string = cells.join
+    
+    if event.all_day?
+      string.blue
+    else
+      string
+    end
   end
 
   def show_events(events)
-    show_headers
+    puts header_row
 
     events.each do |event|
-      show_event event
+      puts event_row(event)
     end
   end
 end
