@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
 
-ruby '2.3'
-
-gem 'colorize'
+# Specify your gem's dependencies in dbc_today.gemspec
+gemspec

@@ -33,7 +33,7 @@ class Event
     list = []
     
     CSV.foreach(
-      'schedule.csv',
+      "#{current_directory}/schedule.csv",
       headers: true,
       header_converters: :symbol,
       skip_blanks: true
@@ -67,5 +67,9 @@ class Event
   def self.nil_or_match(attribute_value, value_to_match)
     attribute_value.nil? ||
       attribute_value.include?(value_to_match)
+  end
+
+  def self.current_directory
+    File.expand_path File.dirname(__FILE__)    
   end
 end

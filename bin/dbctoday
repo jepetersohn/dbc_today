@@ -1,8 +1,7 @@
 #!/usr/bin/env ruby
 # ^ The above comment tells the system
 # to read this file like a ruby file
-require 'pry'
-require_relative 'controller'
+require_relative '../lib/dbc_today/controller'
 
 phase = ARGV[0]
 week = ARGV[1]
