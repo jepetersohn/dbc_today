@@ -20,6 +20,11 @@ class Event
       ends_at_day_end?)
   end
 
+  def moment?
+    start_time == end_time ||
+      end_time.nil?
+  end
+
   def start_time_military
     in_military(start_time)
   end
@@ -55,8 +60,8 @@ class Event
   end
 
   def ends_at_day_end?
-    end_time.start_with?('6:00p') ||
-      end_time.start_with?('6p')
+    end_time&.start_with?('6:00p') ||
+      end_time&.start_with?('6p')
   end
 
   def self.nil_or_match(attribute_value, value_to_match)

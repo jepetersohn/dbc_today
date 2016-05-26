@@ -2,11 +2,13 @@ require 'colorize'
 
 class View
   def show_events(events)
-    puts header_row
+    puts "\n#{header_row}"
 
     events.each do |event|
       puts event_row(event)
     end
+
+    puts
   end
 
   private
@@ -23,7 +25,10 @@ class View
   end
 
   def cell(value, width)
-    string = value.to_s.ljust(width)
+    string = value
+             .to_s
+             .tr('_', ' ')
+             .ljust(width)
 
     if string.length > width
       string[0..width - 5] + '... '
@@ -37,7 +42,7 @@ class View
       columns
       .map { |k, v| cell(k, v) }
 
-    headers.join
+    headers.join.underline
   end
   
   def event_row(event)
@@ -49,6 +54,8 @@ class View
     
     if event.all_day?
       string.blue
+    elsif event.moment?
+      string.red
     else
       string
     end
