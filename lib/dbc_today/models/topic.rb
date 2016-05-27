@@ -23,11 +23,11 @@ class Topic
     list
   end
 
-  def self.where(phase:, week:, day:)
+  def self.where(args)
     all.select { |topic|
-      topic.phase == phase &&
-      topic.week == week &&
-      topic.day == day
+      topic.phase == args[:phase] &&
+      topic.week == args[:week] &&
+      topic.day == args[:day]
     }
   end
 

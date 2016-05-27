@@ -44,11 +44,11 @@ class Event
     list
   end
 
-  def self.where(phase:, week:, day:)
+  def self.where(args)
     all.select { |event|
-      nil_or_match(event.phase, phase) &&
-      nil_or_match(event.week, week) &&
-      nil_or_match(event.day, day)
+      nil_or_match(event.phase, args[:phase]) &&
+      nil_or_match(event.week, args[:week]) &&
+      nil_or_match(event.day, args[:day])
     }.sort_by { |e| e.start_time_military }
   end
 
