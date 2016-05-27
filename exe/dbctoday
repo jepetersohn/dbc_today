@@ -4,13 +4,15 @@
 require_relative '../lib/dbc_today/controllers/events_controller'
 require_relative '../lib/dbc_today/controllers/topics_controller'
 
-phase, week, day = ARGV.select { |arg| arg =~ /\A\d\z/ }
+number_args = ARGV.select { |arg| arg =~ /\A\d\z/ }
+
+phase, week, day = number_args
 day ||= Date.today.wday.to_s
 
 topics_controller = TopicsController.new
 events_controller = EventsController.new
 
-if ARGV.find { |arg| arg == '-h' }
+if ARGV.find { |arg| arg == '-h' } || number_args.length < 2
   puts
   puts "To run dbctoday:".bold
   puts
