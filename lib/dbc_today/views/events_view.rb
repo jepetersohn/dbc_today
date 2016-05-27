@@ -3,7 +3,7 @@ require 'colorize'
 class EventsView
   def display(events)
     puts "\nSCHEDULE".bold
-    puts "#{header_row}"
+    puts header_row
 
     events.each do |event|
       puts event_row(event)

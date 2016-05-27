@@ -9,9 +9,9 @@ class Event
     @phase = attributes.fetch(:phase)
     @week = attributes.fetch(:week)
     @day = attributes.fetch(:day)
-    @description = attributes.fetch(:description, nil)
-    @start_time = attributes.fetch(:start_time, nil)
-    @end_time = attributes.fetch(:end_time, nil)
+    @description = attributes.fetch(:description)
+    @start_time = attributes.fetch(:start_time)
+    @end_time = attributes.fetch(:end_time)
   end
 
   def all_day?
@@ -47,22 +47,23 @@ class Event
   def self.where(args)
     all.select { |event|
       nil_or_match(event.phase, args[:phase]) &&
-      nil_or_match(event.week, args[:week]) &&
-      nil_or_match(event.day, args[:day])
+        nil_or_match(event.week, args[:week]) &&
+        nil_or_match(event.day, args[:day])
     }.sort_by { |e| e.start_time_military }
   end
 
   private
 
   def starts_at_day_start?
-    start_time.start_with?('9:00a') ||
-      start_time.start_with?('9a')
+    return false if start_time.nil?
+
+    start_time.start_with?('9:00a', '9a')
   end
 
   def ends_at_day_end?
-    end_time.nil? ||
-      end_time.start_with?('6:00p') ||
-      end_time.start_with?('6p')
+    return false if end_time.nil?
+
+    end_time.start_with?('6:00p', '6p')
   end
 
   def self.nil_or_match(attribute_value, value_to_match)

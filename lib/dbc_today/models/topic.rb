@@ -26,12 +26,12 @@ class Topic
   def self.where(args)
     all.select { |topic|
       topic.phase == args[:phase] &&
-      topic.week == args[:week] &&
-      topic.day == args[:day]
+        topic.week == args[:week] &&
+        topic.day == args[:day]
     }
   end
 
   def self.current_directory
-    File.expand_path File.dirname(__FILE__)    
+    File.expand_path File.dirname(__FILE__)
   end
 end
