@@ -60,8 +60,9 @@ class Event
   end
 
   def ends_at_day_end?
-    end_time&.start_with?('6:00p') ||
-      end_time&.start_with?('6p')
+    end_time.nil? ||
+      end_time.start_with?('6:00p') ||
+      end_time.start_with?('6p')
   end
 
   def self.nil_or_match(attribute_value, value_to_match)
