@@ -2,12 +2,7 @@ require 'colorize'
 
 class TopicsView
   def display(topics)
-    puts "\nTOPICS".bold
-
-    topics.each do |topic|
-      puts topic.description
-    end
-
-    puts
+    print "\nTOPIC(S): ".bold
+    puts topics.map { |topic| topic.description }.join(', ')
   end
 end
