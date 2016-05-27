@@ -1,8 +1,9 @@
 require 'colorize'
 
-class View
-  def show_events(events)
-    puts "\n#{header_row}"
+class EventsView
+  def display(events)
+    puts "\nSCHEDULE".bold
+    puts "#{header_row}"
 
     events.each do |event|
       puts event_row(event)

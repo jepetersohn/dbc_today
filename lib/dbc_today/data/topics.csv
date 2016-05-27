@@ -1,0 +1,78 @@
+phase,week,day,description
+
+1,1,1,introduction to phase 1
+1,1,1,how to work a challenge
+1,1,2,code flow and logic
+1,1,2,enumerable module
+1,1,3,recursion and iteration
+1,1,3,linear and binary search
+1,1,4,nested data structures
+1,1,4,nested iteration
+1,1,5,sudoku project
+
+1,2,1,creating classes
+1,2,1,working with multiple classes
+1,2,2,inheritance
+1,2,2,composition
+1,2,3,csv parsing
+1,2,3,argv
+1,2,3,csv writing
+1,2,4,mvc
+1,2,5,flash cards project
+
+1,3,1,schema design
+1,3,1,sql commands in psql
+1,3,2,sql with Ruby
+1,3,2,assessment preparation
+1,3,3,activerecord intro
+1,3,4,activerecord associations
+1,3,4,activerecord validation
+1,3,5,public api/raw data ruby
+
+2,1,1,http intro
+2,1,1,sinatra intro
+2,1,2,activerecord
+2,1,2,rest
+2,1,3,rest/crud
+2,1,4,sessions and cookies
+2,1,4,user auth
+2,1,5,git workflow
+
+2,2,1,html and css
+2,2,1,javascript
+2,2,2,jquery and events
+2,2,2,ajax
+2,2,3,event delegation
+2,2,3,polymorphic associations
+2,2,4,project qa
+2,2,5,project demos
+
+2,3,1,js constructor functions
+2,3,2,assessment preparation
+2,3,3,assessment
+2,3,4,apis
+2,3,5,project demos
+
+3,1,1,rails intro
+3,1,2,model/conroller testing
+3,1,2,feature testing
+3,1,3,client project intro
+3,1,3,project management
+3,1,4,ajax in rails
+3,1,5,client project demos
+
+3,2,1,javascript mvc
+3,2,1,js call apply and bind
+3,2,2,jquery deferred objects
+3,2,2,promises
+3,2,3,front end to api
+3,2,3,react intro
+3,2,4,pitch projects
+3,2,5,final project work
+
+3,3,1,final project work
+3,3,2,final project work
+3,3,3,final project work
+3,3,4,how to present
+3,3,5,final project presentations
+3,3,5,graduation

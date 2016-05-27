@@ -1,16 +1,16 @@
 require 'date'
-require_relative 'view'
-require_relative 'event'
+require_relative '../views/events_view'
+require_relative '../models/event'
 
-class Controller
+class EventsController
   attr_reader :view
 
   def initialize
-    @view = View.new
+    @view = EventsView.new
   end
 
   def show_schedule(phase, week, day)
     events = Event.where(phase: phase, week: week, day: day)
-    view.show_events(events)
+    view.display(events)
   end
 end

@@ -33,7 +33,7 @@ class Event
     list = []
     
     CSV.foreach(
-      "#{current_directory}/schedule.csv",
+      "#{current_directory}/../data/schedule.csv",
       headers: true,
       header_converters: :symbol,
       skip_blanks: true

@@ -1,12 +1,31 @@
 #!/usr/bin/env ruby
 # ^ The above comment tells the system
 # to read this file like a ruby file
-require_relative '../lib/dbc_today/controller'
+require_relative '../lib/dbc_today/controllers/events_controller'
+require_relative '../lib/dbc_today/controllers/topics_controller'
 
-phase = ARGV[0]
-week = ARGV[1]
-day = ARGV[2] || Date.today.wday.to_s
+phase, week, day = ARGV.select { |arg| arg =~ /\A\d\z/ }
+day ||= Date.today.wday.to_s
 
-controller = Controller.new
+topics_controller = TopicsController.new
+events_controller = EventsController.new
 
-controller.show_schedule(phase, week, day)
+if ARGV.find { |arg| arg == '-h' }
+  puts
+  puts "To run dbctoday:".bold
+  puts
+  puts "Run " + "dbctoday [phase] [week] [day]".white.bold + " to show the topics and schedule for that day"
+  puts "For example " + "dbctoday 1 1 1".white.bold + " will show the topics and schedule for phase 1 on day 1 of week 1"
+  puts "You can leave out the day (e.g. " + "dbctoday 1 1".white.bold + "), and it will show you info for today's day of the week"
+  puts "Pass a "+ "-t".white.bold + " flag to show only topics"
+  puts "Pass a " + "-s".white.bold + " flag to show only the schedule"
+  puts
+
+elsif ARGV.find { |arg| arg == '-t' }
+  topics_controller.show_topics(phase, week, day)
+elsif ARGV.find { |arg| arg == '-s' }
+  events_controller.show_schedule(phase, week, day)
+else
+  topics_controller.show_topics(phase, week, day)
+  events_controller.show_schedule(phase, week, day)
+end
