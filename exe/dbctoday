@@ -22,7 +22,7 @@ if ARGV.find { |arg| arg == '-h' } || number_args.length < 2
   puts "Pass a "+ "-t".white.bold + " flag to show only topics"
   puts "Pass a " + "-s".white.bold + " flag to show only the schedule"
   puts
-  puts  "Source code at: https://github.com/Devbootcamp/dbc_today"
+  puts "Source code at: https://github.com/Devbootcamp/dbc_today"
   puts
 
 elsif ARGV.find { |arg| arg == '-t' }
