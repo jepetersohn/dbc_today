@@ -1,0 +1,10 @@
+topic,type,name,url
+console mvc,code example,Stephen's apartments mvc app,https://github.com/nyc-pocket-gophers-2016/apartments-mvc
+console mvc,code example,dbc_today mvc console gem,https://github.com/Devbootcamp/dbc_today
+console mvc,code example,hospital mvc example,https://github.com/nyc-nighthawks-2016/ruby-flashcards-1-single-deck-challenge/blob/master/readme-assets/mvc-hospital-example.md
+
+activerecord associations,tutorial,many-to-many railscast,http://railscasts.com/episodes/47-two-many-to-many
+
+jquery,cheatsheet,jquery cheatsheet,https://oscarotero.com/jquery/
+
+debugging,blog post,ruby debugging tips,http://www.unforgivableruby.com/post/142024953634/tips-for-learning-about-and-debugging-your-ruby
