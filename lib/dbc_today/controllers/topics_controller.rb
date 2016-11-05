@@ -10,6 +10,6 @@ class TopicsController
 
   def show_topics(phase, week, day)
     topics = Topic.where(phase: phase, week: week, day: day)
-    view.display(topics)
+    puts view.render_topics(topics)
   end
 end

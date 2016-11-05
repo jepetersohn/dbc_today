@@ -1,8 +1,9 @@
 require 'colorize'
 
 class TopicsView
-  def display(topics)
-    print "\nTOPIC(S): ".bold
-    puts topics.map { |topic| topic.description }.join(', ')
+  def render_topics(topics)
+    "\nTOPIC(S): ".bold +
+      topics.map(&:description).join(', ') +
+      "\n"
   end
 end

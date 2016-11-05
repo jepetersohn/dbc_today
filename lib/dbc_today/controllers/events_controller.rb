@@ -11,6 +11,6 @@ class EventsController
 
   def show_schedule(phase, week, day)
     events = Event.where(phase: phase, week: week, day: day)
-    view.display(events)
+    puts view.render_events(events)
   end
 end
